@@ -26,8 +26,10 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   },
-  "scripts": {
-    "start": "ts-node app.ts",
-    "dev": "nodemon --exec ts-node app.ts"
-  }
+ "scripts": {
+  "dev": "nodemon --exec ts-node app.ts",
+  "build": "tsc",
+  "start": "node dist/app.js"
 }
+}
+
