@@ -18,7 +18,8 @@
     "zod": "^3.25.64"
   },
   "devDependencies": {
-    
+
+    "@types/argon2": "^0.14.1",
     "@types/cookie-parser": "^1.4.9",
     "@types/express": "^5.0.3",
     "@types/jsonwebtoken": "^9.0.9",
@@ -32,4 +33,5 @@
   "start": "node dist/app.js"
 }
 }
+
 
