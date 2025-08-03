@@ -1,5 +1,5 @@
 //Analytics controller (new file)
-import { Analytics } from './db';
+import { Analytics } from '#lib/db';
 
 export const getAnalyticsData = async () => {
   return await Analytics.findOne().sort({ createdAt: -1 });

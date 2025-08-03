@@ -1,11 +1,10 @@
 import mongoose from 'mongoose';
-// Update this import to match the actual export from '#lib/auth'
-import { jwt_decode as decodeJwt } from './auth';
 
-// Ensure MONGODB_URL is loaded from .env
+import { jwt_decode as decodeJwt } from '#lib/auth';
+
 if (!process.env.MONGODB_URL) {
   console.error("MONGODB_URL is not defined in .env file. Please create a .env file.");
-  process.exit(1); // Exit if essential environment variable is missing
+  process.exit(1); 
 }
 
 await mongoose.connect(process.env.MONGODB_URL!);
@@ -420,7 +419,7 @@ const AnalyticsSchema = new mongoose.Schema<Analytics>(
     timestamp: { type: Date, required: true, default: Date.now }
   },
   {
-    timestamps: true // ✅ This adds createdAt and updatedAt fields automatically
+    timestamps: true // This adds createdAt and updatedAt fields automatically
   }
 );
 
