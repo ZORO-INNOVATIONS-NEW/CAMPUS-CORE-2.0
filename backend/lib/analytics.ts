@@ -6,6 +6,5 @@ export const getAnalyticsData = async () => {
 };
 
 export const generateReport = async () => {
-  // Mock report generation
   return { message: "Report generated!" };
 };
