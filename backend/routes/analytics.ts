@@ -1,31 +1,5 @@
 //analytics routes
-/**
- * @openapi
- * /api/analytics/:
- *   get:
- *     summary: Get analytics data
- *     description: Fetches system-wide analytics data.
- *     tags:
- *       - Analytics
- *     responses:
- *       200:
- *         description: Analytics data retrieved successfully
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               additionalProperties: true
- *       500:
- *         description: Internal server error
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 error:
- *                   type: string
- *                   example: "Unexpected error occurred"
- */
+
 import express from 'express';
 import { getAnalyticsData, generateReport } from '../lib/analytics';
 

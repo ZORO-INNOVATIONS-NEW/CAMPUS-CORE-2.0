@@ -1,0 +1,39 @@
+👆👆NOTE 
+--> npm i --save-dev @types/node`. DO THIS TO USE PROCESS.ENV..... IN YOU FILE --> otherwise it will continue to show error
+--> ALL THE CHANGES HAVE A [[🙋‍♀️🙋‍♀️🙋‍♀️🙋‍♀️🙋‍♀️🙋‍♀️🙋‍♀️ FOR EMAIL VERIFICATION]] TO INDICATE CHANGE OF CODE
+--> THIS IS EMAIL VERIFICATION USING LINK NOT OTP VERIFICATION VIA EMAIL      
+
+👉👈👉👈👉👈
+1> npm install nodemailer --> allows your backend to send emails via SMTP (like Gmail).
+
+2> create a smtp app password from your google account and then put it along with you mail id in the .env file 
+
+3> created a mailer.ts file in LIB folder --> 
+            --> it contains a createTraNsport() for using Gmail
+            --> sendVerification(to,token) for clickable links
+
+4> To create SMTP password make sure you have TURN ON the 2step verification in your myGoogleAccount.com 
+            -->https://myaccount.google.com/?pli=1
+
+5> add the Frontend url in the .env file to access Frontend
+
+6> Modificaton in create_user.ts -->
+            -->added email generation token auth.jwt_create(uid,type)
+            --> calling  sendVerificationMail(email, token) after user creation
+
+7> db.ts file will be modified as well-->
+            -->a verified field to mark verification
+
+8> login.ts will be modified -->
+            --> blocking unverified accounts from logging in
+
+9> verify-email Route will be created to -->
+            --> decode the token from sendVerification
+            --> find the userID
+            --> set VERIFIED==TRUE
+            
+10> OTHER IMPORTANT POINTS TO  TAKE CARE:
+    --> MAKE SURE TO PROPERLY SET UP YOUR APP PASSWORD --> SOMETIMES IT MAY TAKE TIME
+    --> SET UP YOUR SESSION TOKEN IN COOKIES ON YOUR POSTMAN FOR TESTING AND VERIFICATION OF THE WORKING
+    --> I USED LOCAL MONGODB SETUP --> SO I DON'T KNOW ABOUT ITS WORKING ON THE CLOUD
+    --> ALWAYS GENERATE A JWT TOKEN FROM APP.TS FILE --> THIS TOKEN WILL BE USED FOR SETTING UP COOKIES IN POSTMAN

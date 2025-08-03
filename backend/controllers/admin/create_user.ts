@@ -2,6 +2,7 @@ import { z } from 'zod';
 
 import * as db from '#lib/db.ts';
 import * as auth from '#lib/auth.ts';
+import { sendVerificationMail } from '#lib/mailer.ts'; // for email verification
 
 const create_user_schema = z.object({
   name: z.string(),
@@ -21,7 +22,12 @@ export const createUser=async (req : any, res : any) =>
     try
     {
       const uid = await db.add_user({name, email, rollno, pass_hash, type});
-      res.sendStatus(200);
+      // res.sendStatus(200); // for email verification
+     // const token = auth.jwt_create(uid, type, '24h');  // Optional: pass expiry
+      const token = auth.jwt_create(uid, type);
+      await sendVerificationMail(email, token);
+      res.status(200).json({ message: 'User created. Verification email sent.' });
+
     }
     catch (err) {
       res.status(400).json({error: 'user already exists'});
