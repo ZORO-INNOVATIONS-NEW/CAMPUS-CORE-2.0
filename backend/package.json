@@ -9,6 +9,12 @@
     "#routes/*": "./routes/*",
     "#controllers/*": "./controllers/*"
   },
+  "scripts": {
+    "dev": "nodemon --exec tsx app.ts",
+    "build": "tsc",
+    "start": "node dist/app.js",
+    "test": "echo \"No backend tests specified\" && exit 0"
+  },
   "dependencies": {
     "argon2": "^0.30.3",
     "cookie-parser": "^1.4.7",
@@ -32,11 +38,5 @@
     "ts-node": "^10.9.2",
     "tsx": "^4.20.3",
     "typescript": "^5.8.3"
-  },
-  "scripts": {
-    "dev": "nodemon --exec tsx app.ts",
-    "build": "tsc",
-    "start": "node dist/app.js",
-    "test": "echo \"No backend tests specified\" && exit 0"
   }
 }

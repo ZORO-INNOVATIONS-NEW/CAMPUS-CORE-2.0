@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-import { jwt_decode as decodeJwt } from '#lib/auth';
+import { jwt_decode as decodeJwt } from '#lib/auth.ts';
 
 if (!process.env.MONGODB_URL) {
   console.error("MONGODB_URL is not defined in .env file. Please create a .env file.");

@@ -1,5 +1,5 @@
-import * as db from '#lib/db';
-import * as auth from '#lib/auth';
+import * as db from '#lib/db.ts';
+import * as auth from '#lib/auth.ts';
 
 // [MIDDLEWARES] Role-based access control for routes
 
