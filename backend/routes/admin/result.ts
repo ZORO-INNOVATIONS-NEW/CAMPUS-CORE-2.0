@@ -41,7 +41,7 @@ const UpdateResultRecordSchema = z.object({
  * @description Create a new result record for a student.
  * @access Admin Only
  */
-router.post('/', admin_only, async (req: CustomRequest, res: Response): Promise<void> => {
+router.post('/result', admin_only, async (req: CustomRequest, res: Response): Promise<void> => {
   try {
     const parsedBody = CreateResultRecordSchema.safeParse(req.body);
 
